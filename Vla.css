@@ -1,0 +1,9 @@
+body {
+  background-color: lightblue;
+}
+.eye{
+position: absolute;
+}
+#hidel{
+display: none;
+}

@@ -1,0 +1,45 @@
+ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+  background-color:green;
+  height:25px;
+  font-family:Arial;
+  font-size:20px;
+  
+}
+li{
+  float: left;
+  border-right:1px solid #ffffff;
+  
+}
+a{
+  display:block;
+  text-decoration:none;
+  padding:1 7px;
+ color:White;
+  
+}
+ .div {
+      background-color:#ffd8a1;
+      border-radius:30px;
+      text-align: center;
+ }
+    .div a{
+      color:blue;
+text-decoration: none;
+    }
+  footer{
+    width:360px;
+    position:absolute;
+    background-color: Black;
+    top:680;
+    right:0;
+    left:0;
+    color: White;
+    text-align:center;
+  }
+  p{
+    font-weight:bold;
+    font-family:Arial;
+  }
