@@ -30,10 +30,9 @@ a{
 text-decoration: none;
     }
   footer{
-    width:360px;
     position:absolute;
     background-color: Black;
-    top:680;
+   
     right:0;
     left:0;
     color: White;
