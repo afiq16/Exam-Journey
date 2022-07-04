@@ -1,0 +1,20 @@
+body{
+  background-color:#df910043;
+}
+table{
+  width:350px;
+  background-color: black;
+  color: white;
+}
+inut{
+  background-color:#33d6ff;
+  color:#0038b6;
+  border-radius:10px;
+   width:62px;
+   height:28px;
+}
+.forgot{
+ a{
+ text-align:right;
+ text-decoration:none;
+}
