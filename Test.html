@@ -1,37 +1,173 @@
+<!DOCTYPE html>
 <html>
-   <link rel="stylesheet"href="Button.css">
-  <link rel="stylesheet"href="Test.css">
-<meta name="viewport" content="width=device-width, initial scale=1"/> <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+        /* Full-width input fields */
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: list-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Overwrite default styles of hr */
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit button */
+
+        .registerbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+
+        /* Add a blue text color to links */
+
+        a {
+            color: dodgerblue;
+        }
+
+        /* Set a grey background color and center the text of the "sign in" section */
+
+        .signin {
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+    </style>
+</head>
+
 <body>
-  <center>
-  <h1>Exam Registration</h1><h2>↓<br>↓<br>↓<br>↓<br></h2>
-  </center>
-          <table>
-     <form  action="https://formsubmit.co/entazali39@gmail.com" method="POST">
-            <tr>
-    <td>Username:<td><input type="text"  name="name" placeholder="Username.."></td></td>
-    </tr>
-    <tr>
-     <tr>
-       <td>Class:<td><input type="text"  name="number" placeholder="Your Class"></td></td>
-            <tr>
-            <tr>
-     <td>Gmail:<td><input type="gmail" name=gmail""placeholder="gmail"></td></td>
-            <tr>
-       <td><input class="inut" type="submit" value="submit"onclick="funs()">
-              </tr>             
-          </table>
-             </form>
-             <script>
-            function funs(){
-               alert("Wait 24 hours. Then your id and password will be sent");
-            }
-             </script>
-   <a href="Forgot.html">I have my account<br>forgot my id and password</a>
-        </body>
-   <footer>
-  <div><h1>ISHFAK AHMED</h1>
-  <p>©Copyrights by Afiq</p>
-  </div>
-</footer>
-      </html>
+
+<form>
+    <div class="container">
+    <center>   <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Password" name="psw" id="psw" required>
+
+        <hr>
+     
+        <button type="button" id="submitData" name="submitData" class="registerbtn">Register</button>
+    </div>
+
+    <div class="container signin">
+        <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+</form>
+
+</body>
+</html>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+    import {getDatabase, set, ref, update} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        // Your configs
+      apiKey: "AIzaSyADz94VcQFUJyWsWVPj2CL8T5nAUJCOj-o",
+    authDomain: "authentication-43534.firebaseapp.com",
+    projectId: "authentication-43534",
+    storageBucket: "authentication-43534.appspot.com",
+    messagingSenderId: "532824030533",
+    appId: "1:532824030533:web:5bccecc27d397d2ee7922c"
+  };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const database = getDatabase(app);
+
+    submitData.addEventListener('click', (e) => {
+
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('psw').value;
+
+        //sign up user
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ... user.uid
+                set(ref(database, 'users/' + user.uid), {
+                    email: email,
+                    password: password
+                })
+                    .then(() => {
+                        // Data saved successfully!
+                        alert('user createdsuccessful,Go to log in');
+        
+                    })
+                    .catch((error) => {
+                        // The write failed...
+                        alert(error);
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                alert(errorMessage);
+            });
+
+            
+    });
+
+</script>
