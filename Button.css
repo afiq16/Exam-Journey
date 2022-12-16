@@ -1,47 +1,118 @@
-ul{
+body{
+  background-color:#9334bf;
+}
+.fan{
+  width:350px;
+}
+
+.h1{
   margin:0;
-  padding:0;
-  list-style:none;
-  background-color:green;
-  height:25px;
-  font-family:Arial;
-  font-size:20px;
-  
+  font-size: 37px;
+  color: #d1a700;
+  text-align:center;
+  font-family: cursive;
+  text-shadow:5px 5px  5px #d1a700 ;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: green;
+  height: 33px;
+  font-family: Arial;
+  font-size: 14.5px;
+  border-style: solid;
+  border-color: white ;
+
 }
 li{
+  
+ 
   float: left;
-  border-right:1px solid #ffffff;
+  /*
+  border-right:1px solid #ffffff;*/
   
 }
 a{
   display:block;
   text-decoration:none;
-  padding:1 5px;
+  padding:6px;
  color:White;
   
 }
  .div {
-      background-color:#ffd8a1;
-      border-radius:30px;
+     
+    background-color:#00c164fa;
+      border-radius:0px;
       text-align: center;
  }
     .div a{
       color:blue;
 text-decoration: none;
     }
-  footer{
     
-    position:absolute;
-    background-color: Black;
-    
-
-    right:0;
-    left:0;
-     bottom:0;
-    color: White;
-    text-align:center;
-  }
   p{
     font-weight:bold;
     font-family:Arial;
   }
+ 
+  .rel{
+    font-family: cursive;
+    text-shadow: 5px 5px  5px #d1a700;
+    font-size: 30px;
+    color: #d1a700;
+  text-align:center;
+  font-family: cursive;
+  text-shadow:5px 5px  5px #d1a700 ;
+  }
+  .in{
+    text-align:center;
+    list-style:none;
+    font-family:Monospace;
+  }
+ .iv{
+  
+  background-color:pink;
+ border-radius:30px;
+      text-align: center;
+  font-family;serif;
+ }
+  .iv1{
+  
+  background-color:#0500a1;
+ border-radius:36px 0px 36px 0px;
+      text-align: center;
+  font-family;serif;
+  
+ }
+  .div1 {
+     
+  background-color:#c9c9c9;
+      border-radius:10px;
+      text-align: center;
+      box-shadow:15px 10px White ;
+ }
+
+footer{
+   position:fixed;
+    background-color: Black;
+    right:0;
+    left:0;
+     bottom:0;
+     top: ;
+    color: White;
+    text-align:center;
+  }
+
+.ig{
+  color: #d1a700;
+  text-align:center;
+  font-family: cursive;
+  text-shadow:5px 5px  5px #d1a700 ;
+}
+.fon{
+  color: blue;
+  text-align:center;
+  font-family: cursive;
+  text-shadow:5px 5px  5px #d1a700 ;
+}
