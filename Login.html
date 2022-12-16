@@ -1,64 +1,205 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="Login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add padding to containers */
+
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+        /* Full-width input fields */
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: list-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Overwrite default styles of hr */
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit button */
+
+        .registerbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+
+        /* Add a blue text color to links */
+
+        a {
+            color: dodgerblue;
+        }
+
+        /* Set a grey background color and center the text of the "sign in" section */
+
+        .signin {
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+    </style>
 </head>
-<meta name="viewport" content="width=device-width, initial scale=1"/> <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>
- 
+
 <body>
-  <br><br><br><br><br><br><br><br><br> 
-<div class="container">
-<div class="header">
 
- <h1>Login To Exam</h1>
- </div>
+<form>
+    <div class="container">
+      <center>  <h1>Log In</h1>
+        <p></p>
+        <hr>
 
- <form name="login" onsubmit="return validateForm() ;" method="post">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
 
- Username:<br> <input class="username" type="text" name="username"><br>
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Password" name="psw" id="psw" required>
 
+        <hr>
+     
+        <button type="button" id="submitData" name="submitData" class="registerbtn">Log in</button>
+    </div>
 
- Password: <br><input class="password" type="password" name="password">  <br>  <br> 
- 
-<input type="button" class="submit" value="Log In" name="submit" onclick="validate()"><br><br>
-<a href="forgot.html" class="a">forgot password</a>
+    <div class="container signin">
+        <p>Already have an account? <a href="#">Sign up</a>.</p>
+    </div>
 </form>
-</div>
 
-<script>
-
-var count= 2;
-
-function validate()
-{
-	var un = document.login.username.value;
-	var pw = document.login.password.value;
-	var valid = false;
-	var usernameArray = ["Vlad", "afiq16"];
-	var passwordArray = ["12345","13579"];
-	for (var i = 0; i < usernameArray.length; i++)
- {
-
-	if ((un == usernameArray[i]) && (pw == passwordArray[i]))
-	{
-		valid = true;
-		break;
-	}
-}
-	if (valid)
-	{
-		window.location.href= "New.html";
-		return false;
-	}
-	else
-	{
-		alert("Incorrect password or username you are now blocked");
-		
-	}
-}
-
-</script>
 </body>
 </html>
 
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+    import {getDatabase, set, ref, update} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        // Your configs
+      apiKey: "AIzaSyADz94VcQFUJyWsWVPj2CL8T5nAUJCOj-o",
+    authDomain: "authentication-43534.firebaseapp.com",
+    projectId: "authentication-43534",
+    storageBucket: "authentication-43534.appspot.com",
+    messagingSenderId: "532824030533",
+    appId: "1:532824030533:web:5bccecc27d397d2ee7922c"
+  };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const database = getDatabase(app);
+
+    submitData.addEventListener('click', (e) => {
+
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('psw').value;
+
+       /* //sign up user
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ... user.uid
+                set(ref(database, 'users/' + user.uid), {
+                    email: email,
+                    password: password
+                })
+                    .then(() => {
+                        // Data saved successfully!
+                        alert('user created successfully');
+        
+                    })
+                    .catch((error) => {
+                        // The write failed...
+                        alert(error);
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+                alert(errorMessage);
+            });*/
+
+        // log in user
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ...
+
+                // save log in details into real time database
+                var lgDate = new Date();
+                update(ref(database, 'users/' + user.uid), {
+                    last_login: lgDate,
+                })
+                    .then(() => {
+                        // Data saved successfully!
+                 window.location.href="new.html";
+                    })
+                    .catch((error) => {
+                        // The write failed...
+                        alert(error);
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
+/*
+        sign out user
+        signOut(auth).then(() => {
+               // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        });*/
+    });
+
+</script>
