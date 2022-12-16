@@ -2,7 +2,32 @@
   <head>
     <title>About</title>
   </head>
+  <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
+    .social-icons{
+      font-size:28px;
+   
+      
+    }
+        .social-icons a{
+      
+      background-color:#4aa4b7;
+      margin-right:22px;
+      margin-left:22px;
+      color:white;
+      text-decoration:none;
+      border-radius:05px;
+     
+      
+    }
+    .t{
+      background-color:#d1a700 ;
+      box-shadow: 5px 5px  5px #d1a700 ;
+      border-radius:55px;
+    }
     .navbar{
       text-align: center;
     }
@@ -12,24 +37,45 @@ text-decoration: none;
 
 padding:18px 28px;()
 }
+table{
+  background-color: #f0a01b;
+}
     </style>
-    <link rel="stylesheet"href="Test.css">
+    <link rel="stylesheet"href=".css">
       <meta name="viewport" content="width=device-width, initial scale=1"/> <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>
-  <body bgcolor="green">
+  <body bgcolor="#3511f2">
+    <center>
     <div class="navbar">
-     <u><h1 style="color: red">CONTACT</h2></u>
+     <u><h1 style="color: #d1a700;
+  text-align:center;
+  font-family: cursive;
+  text-shadow:5px 5px  5px #d1a700 ;">CONTACT</h2></u>
     </div>
-    <center>
-   <h4>Facebook:<a href="https://www.facebook.com/ishfak.ahmed.1238">Ishfak Ahmed</a><br>Email:<a href="mailto:afiq51661@gmail.com">afiq51661@gmail.com</a><br>Mobile No:<a href="01748751661">0174875166×</a></h4>
-    </center><br>
-    <center>
-     <h3><u>HELP</u></h3>
+   <div class="social-media">
+        
+            <div class="social-icons">
+              <a href="https://www.facebook.com/ishfak.ahmed.1238?mibextid=ZbWKwL">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="mailto:afiq51661@gmail.com">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="
+https://mobile.twitter.com " >
+                <i class="fab fa-twitter"></i>
+              </a>
+            
+            </div>
+          </div>
+     <h3 class="t"><u>HELP</u></h3>
       
-    </center>
-            <table>
+
+    
+            <table style="background-color:red>
+
      <form  action="https://formsubmit.co/entazali39@gmail.com" method="POST">
     <tr>
-     <td> Gmail:<input type="email"  name="email" placeholder="Gmail"style="width:295px"></td></td>
+     <td> Gmail:<input type="email"  name="email" placeholder="Gmail"style="width:340px"></td></td>
      </tr>
      <tr>
     <td>Message:</td>
@@ -37,10 +83,12 @@ padding:18px 28px;()
     <td>
     <textarea name="message" placeholder="Write something.." style="height:100px;width:340px"></textarea></td>
             <tr>
-       <td><input class="inut" type="submit" value="submit"onclick="funs()">
-              </tr>                
+              
+      <td><input style="background-color:#5be5ac; border-radius:5px;color:#0b60cb;"input class="inut" type="submit" value="submit"onclick="funs()">
+            </td>  </tr>                
              </table>
              </form>
+                 </center>
              <script>
             function funs(){
                alert("Wait 24 hours. Then your problem will be sent");
