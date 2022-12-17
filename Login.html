@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-
+ <link rel="stylesheet"href="Login.css">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: black;
+            background-color: #3611f2;
         }
 
         * {
@@ -17,7 +17,7 @@
 
         .container {
             padding: 16px;
-            background-color: white;
+            background-color:#006a84;
         }
 
         /* Full-width input fields */
@@ -29,7 +29,8 @@
             margin: 5px 0 22px 0;
             display: list-block;
             border: none;
-            background: #f1f1f1;
+            background-color: #83cfff;
+            border-radius:9px;
         }
 
         input[type=text]:focus,
@@ -48,14 +49,16 @@
         /* Set a style for the submit button */
 
         .registerbtn {
-            background-color: #04AA6D;
+            background-color: #9332ee;
             color: white;
             padding: 16px 20px;
             margin: 8px 0;
-            border: none;
+            border-color:#461cfa;
             cursor: pointer;
             width: 50%;
             opacity: 0.9;
+            border-radius: 15px;
+            
         }
 
         .registerbtn:hover {
@@ -94,10 +97,11 @@
         <hr>
      
         <button type="button" id="submitData" name="submitData" class="registerbtn">Log in</button>
+     
     </div>
 
-    <div class="container signin">
-        <p>Already have an account? <a href="#">Sign up</a>.</p>
+    <div class="container ">
+        <a href="Test.html">Already have an account?</a>
     </div>
 </form>
 
@@ -181,7 +185,7 @@
                 })
                     .then(() => {
                         // Data saved successfully!
-                 window.location.href="New.html";
+                 window.location.href="new.html";
                     })
                     .catch((error) => {
                         // The write failed...
