@@ -1,2 +1,2 @@
 # afiqrcs
-https://afiq16.github.io/afiqrcs/
+https://afiq16.github.io/Exam-Journey/
